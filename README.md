@@ -4,7 +4,7 @@ classic snake game
 Start:
 
 to start you just type, 'make'.
-then you can play by typing, './make'.
+then you can play by typing, './Main'.
 
 How to play:
 
