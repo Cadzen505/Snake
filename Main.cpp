@@ -8,10 +8,8 @@
 const int WIDTH = 10;
 const int HEIGHT = 10;
 
-void render(const Snake& snake, const std::pair<int, int>& food, int score) {
+void render(const Snake& snake, const std::pair<int, int>& food) {
     std::cout << "\033[2J\033[1H";
-
-    std::cout << "Score: " << score << "\n";
 
     for (int y = 0; y < HEIGHT; ++y) {
         for (int x = 0; x < WIDTH; ++x) {
@@ -54,12 +52,11 @@ int main() {
     
     Direction current_dir = Direction::RIGHT;
     bool running = true;
-    int score = 0;
 
     std::cout << "Controls: w (up), s (down), a (left), d (right), q (quit)\n";
 
     while (running) {
-        render(snake, food, score);
+        render(snake, food);
 
         char input;
         std::cout << "Move (w/a/s/d/q): ";
@@ -84,7 +81,6 @@ int main() {
         snake.move(move, grew);
 
         if (grew) {
-            score += 10;
             food = {std::rand() % (WIDTH - 2) + 1, std::rand() % (HEIGHT - 2) + 1};
         }
 
