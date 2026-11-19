@@ -14,12 +14,17 @@ void render(const Snake& snake, const std::pair<int, int>& food) {
         for (int x = 0; x < WIDTH; ++x) {
             if (x == 0 || x == WIDTH - 1 || y == 0 || y == HEIGHT - 1) {
                 std::cout << "#";
-            } else {
+            } 
+            
+            else {
+
                 bool is_body = false;
                 if (snake.getHead().first == x && snake.getHead().second == y) {
                     std::cout << "O";
                     is_body = true;
-                } else {
+                } 
+                
+                else {
                     for (const auto& segment : snake.getBody()) {
                         if (segment.first == x && segment.second == y) {
                             std::cout << "o";
