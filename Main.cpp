@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include <ctime>
 #include "Snake.h"
 #include "Move.h"
 
@@ -44,7 +43,6 @@ void render(const Snake& snake, const std::pair<int, int>& food) {
 }
 
 int main() {
-    std::srand(std::time(nullptr));
 
     Snake snake(WIDTH/2, HEIGHT/2);
     
@@ -64,13 +62,21 @@ int main() {
 
         if (input == 'q') {
             break;
-        } else if (input == 'w' && current_dir != Direction::DOWN) {
+        } 
+
+        else if (input == 'w' && current_dir != Direction::DOWN) {
             current_dir = Direction::UP;
-        } else if (input == 's' && current_dir != Direction::UP) {
+        } 
+        
+        else if (input == 's' && current_dir != Direction::UP) {
             current_dir = Direction::DOWN;
-        } else if (input == 'a' && current_dir != Direction::RIGHT) {
+        } 
+        
+        else if (input == 'a' && current_dir != Direction::RIGHT) {
             current_dir = Direction::LEFT;
-        } else if (input == 'd' && current_dir != Direction::LEFT) {
+        } 
+        
+        else if (input == 'd' && current_dir != Direction::LEFT) {
             current_dir = Direction::RIGHT;
         }
 
